@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B6A7D581880809600433CFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6A7D571880809600433CFF /* Foundation.framework */; };
+		3B6A7D5A1880809600433CFF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6A7D591880809600433CFF /* CoreGraphics.framework */; };
+		3B6A7D5C1880809600433CFF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6A7D5B1880809600433CFF /* UIKit.framework */; };
+		3B6A7D621880809600433CFF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B6A7D601880809600433CFF /* InfoPlist.strings */; };
+		3B6A7D641880809600433CFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A7D631880809600433CFF /* main.m */; };
+		3B6A7D681880809600433CFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A7D671880809600433CFF /* AppDelegate.m */; };
+		3B6A7D6B1880809600433CFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6A7D691880809600433CFF /* Main.storyboard */; };
+		3B6A7D6E1880809600433CFF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A7D6D1880809600433CFF /* ViewController.m */; };
+		3B6A7D701880809600433CFF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6A7D6F1880809600433CFF /* Images.xcassets */; };
+		3B6A7D771880809600433CFF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6A7D761880809600433CFF /* XCTest.framework */; };
+		3B6A7D781880809600433CFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6A7D571880809600433CFF /* Foundation.framework */; };
+		3B6A7D791880809600433CFF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6A7D5B1880809600433CFF /* UIKit.framework */; };
+		3B6A7D811880809600433CFF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B6A7D7F1880809600433CFF /* InfoPlist.strings */; };
+		3B6A7D831880809600433CFF /* RaspiDuinoRemoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A7D821880809600433CFF /* RaspiDuinoRemoteTests.m */; };
+		3B6A7D901880811600433CFF /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A7D8D1880811600433CFF /* SettingsViewController.m */; };
+		3B6A7D911880811600433CFF /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6A7D8E1880811600433CFF /* SettingsViewController.xib */; };
+		3B6A7D921880811600433CFF /* video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6A7D8F1880811600433CFF /* video@2x.png */; };
+		3B6A7D97188081DB00433CFF /* MotionJpegImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A7D96188081DB00433CFF /* MotionJpegImageView.m */; };
+		3B6A7D9C188089B100433CFF /* lightoff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6A7D9A188089B100433CFF /* lightoff@2x.png */; };
+		3B6A7D9D188089B100433CFF /* lighton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6A7D9B188089B100433CFF /* lighton@2x.png */; };
+		3B9F14FE188191D700B9C097 /* move_backward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9F14F8188191D700B9C097 /* move_backward@2x.png */; };
+		3B9F14FF188191D700B9C097 /* move_center@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9F14F9188191D700B9C097 /* move_center@2x.png */; };
+		3B9F1500188191D700B9C097 /* move_forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9F14FA188191D700B9C097 /* move_forward@2x.png */; };
+		3B9F1501188191D700B9C097 /* move_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9F14FB188191D700B9C097 /* move_left@2x.png */; };
+		3B9F1502188191D700B9C097 /* move_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9F14FC188191D700B9C097 /* move_right@2x.png */; };
+		3B9F1503188191D700B9C097 /* move_stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9F14FD188191D700B9C097 /* move_stop@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3B6A7D7A1880809600433CFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B6A7D4C1880809600433CFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B6A7D531880809600433CFF;
+			remoteInfo = RaspiDuinoRemote;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3B6A7D541880809600433CFF /* RaspiDuinoRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaspiDuinoRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B6A7D571880809600433CFF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3B6A7D591880809600433CFF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3B6A7D5B1880809600433CFF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3B6A7D5F1880809600433CFF /* RaspiDuinoRemote-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RaspiDuinoRemote-Info.plist"; sourceTree = "<group>"; };
+		3B6A7D611880809600433CFF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3B6A7D631880809600433CFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3B6A7D651880809600433CFF /* RaspiDuinoRemote-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RaspiDuinoRemote-Prefix.pch"; sourceTree = "<group>"; };
+		3B6A7D661880809600433CFF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3B6A7D671880809600433CFF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3B6A7D6A1880809600433CFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3B6A7D6C1880809600433CFF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3B6A7D6D1880809600433CFF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3B6A7D6F1880809600433CFF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3B6A7D751880809600433CFF /* RaspiDuinoRemoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaspiDuinoRemoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B6A7D761880809600433CFF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3B6A7D7E1880809600433CFF /* RaspiDuinoRemoteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RaspiDuinoRemoteTests-Info.plist"; sourceTree = "<group>"; };
+		3B6A7D801880809600433CFF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3B6A7D821880809600433CFF /* RaspiDuinoRemoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RaspiDuinoRemoteTests.m; sourceTree = "<group>"; };
+		3B6A7D8C1880811600433CFF /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		3B6A7D8D1880811600433CFF /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		3B6A7D8E1880811600433CFF /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		3B6A7D8F1880811600433CFF /* video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video@2x.png"; sourceTree = "<group>"; };
+		3B6A7D95188081DB00433CFF /* MotionJpegImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionJpegImageView.h; sourceTree = "<group>"; };
+		3B6A7D96188081DB00433CFF /* MotionJpegImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionJpegImageView.m; sourceTree = "<group>"; };
+		3B6A7D9A188089B100433CFF /* lightoff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lightoff@2x.png"; sourceTree = "<group>"; };
+		3B6A7D9B188089B100433CFF /* lighton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lighton@2x.png"; sourceTree = "<group>"; };
+		3B9F14F8188191D700B9C097 /* move_backward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "move_backward@2x.png"; sourceTree = "<group>"; };
+		3B9F14F9188191D700B9C097 /* move_center@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "move_center@2x.png"; sourceTree = "<group>"; };
+		3B9F14FA188191D700B9C097 /* move_forward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "move_forward@2x.png"; sourceTree = "<group>"; };
+		3B9F14FB188191D700B9C097 /* move_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "move_left@2x.png"; sourceTree = "<group>"; };
+		3B9F14FC188191D700B9C097 /* move_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "move_right@2x.png"; sourceTree = "<group>"; };
+		3B9F14FD188191D700B9C097 /* move_stop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "move_stop@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3B6A7D511880809600433CFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B6A7D5A1880809600433CFF /* CoreGraphics.framework in Frameworks */,
+				3B6A7D5C1880809600433CFF /* UIKit.framework in Frameworks */,
+				3B6A7D581880809600433CFF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B6A7D721880809600433CFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B6A7D771880809600433CFF /* XCTest.framework in Frameworks */,
+				3B6A7D791880809600433CFF /* UIKit.framework in Frameworks */,
+				3B6A7D781880809600433CFF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B6A7D4B1880809600433CFF = {
+			isa = PBXGroup;
+			children = (
+				3B6A7D5D1880809600433CFF /* RaspiDuinoRemote */,
+				3B6A7D93188081DB00433CFF /* External */,
+				3B6A7D7C1880809600433CFF /* RaspiDuinoRemoteTests */,
+				3B6A7D561880809600433CFF /* Frameworks */,
+				3B6A7D551880809600433CFF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3B6A7D551880809600433CFF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B6A7D541880809600433CFF /* RaspiDuinoRemote.app */,
+				3B6A7D751880809600433CFF /* RaspiDuinoRemoteTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B6A7D561880809600433CFF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B6A7D571880809600433CFF /* Foundation.framework */,
+				3B6A7D591880809600433CFF /* CoreGraphics.framework */,
+				3B6A7D5B1880809600433CFF /* UIKit.framework */,
+				3B6A7D761880809600433CFF /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3B6A7D5D1880809600433CFF /* RaspiDuinoRemote */ = {
+			isa = PBXGroup;
+			children = (
+				3B6A7D661880809600433CFF /* AppDelegate.h */,
+				3B6A7D671880809600433CFF /* AppDelegate.m */,
+				3B6A7D691880809600433CFF /* Main.storyboard */,
+				3B6A7D8C1880811600433CFF /* SettingsViewController.h */,
+				3B6A7D8D1880811600433CFF /* SettingsViewController.m */,
+				3B6A7D8E1880811600433CFF /* SettingsViewController.xib */,
+				3B6A7D6C1880809600433CFF /* ViewController.h */,
+				3B6A7D6D1880809600433CFF /* ViewController.m */,
+				3B6A7D6F1880809600433CFF /* Images.xcassets */,
+				3B9F14EB1881867C00B9C097 /* Images */,
+				3B6A7D5E1880809600433CFF /* Supporting Files */,
+			);
+			path = RaspiDuinoRemote;
+			sourceTree = "<group>";
+		};
+		3B6A7D5E1880809600433CFF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B6A7D5F1880809600433CFF /* RaspiDuinoRemote-Info.plist */,
+				3B6A7D601880809600433CFF /* InfoPlist.strings */,
+				3B6A7D631880809600433CFF /* main.m */,
+				3B6A7D651880809600433CFF /* RaspiDuinoRemote-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3B6A7D7C1880809600433CFF /* RaspiDuinoRemoteTests */ = {
+			isa = PBXGroup;
+			children = (
+				3B6A7D821880809600433CFF /* RaspiDuinoRemoteTests.m */,
+				3B6A7D7D1880809600433CFF /* Supporting Files */,
+			);
+			path = RaspiDuinoRemoteTests;
+			sourceTree = "<group>";
+		};
+		3B6A7D7D1880809600433CFF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B6A7D7E1880809600433CFF /* RaspiDuinoRemoteTests-Info.plist */,
+				3B6A7D7F1880809600433CFF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3B6A7D93188081DB00433CFF /* External */ = {
+			isa = PBXGroup;
+			children = (
+				3B6A7D94188081DB00433CFF /* MotionJpegImageView */,
+			);
+			name = External;
+			path = "../../../../Dropbox/Developpement Raspberry Pi/Projets/movingraspi/MovingRaspiPlus/MovingRaspiRemotePlus/External";
+			sourceTree = "<group>";
+		};
+		3B6A7D94188081DB00433CFF /* MotionJpegImageView */ = {
+			isa = PBXGroup;
+			children = (
+				3B6A7D95188081DB00433CFF /* MotionJpegImageView.h */,
+				3B6A7D96188081DB00433CFF /* MotionJpegImageView.m */,
+			);
+			path = MotionJpegImageView;
+			sourceTree = "<group>";
+		};
+		3B9F14EB1881867C00B9C097 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3B6A7D9A188089B100433CFF /* lightoff@2x.png */,
+				3B6A7D9B188089B100433CFF /* lighton@2x.png */,
+				3B9F14F8188191D700B9C097 /* move_backward@2x.png */,
+				3B9F14F9188191D700B9C097 /* move_center@2x.png */,
+				3B9F14FA188191D700B9C097 /* move_forward@2x.png */,
+				3B9F14FB188191D700B9C097 /* move_left@2x.png */,
+				3B9F14FC188191D700B9C097 /* move_right@2x.png */,
+				3B9F14FD188191D700B9C097 /* move_stop@2x.png */,
+				3B6A7D8F1880811600433CFF /* video@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B6A7D531880809600433CFF /* RaspiDuinoRemote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B6A7D861880809600433CFF /* Build configuration list for PBXNativeTarget "RaspiDuinoRemote" */;
+			buildPhases = (
+				3B6A7D501880809600433CFF /* Sources */,
+				3B6A7D511880809600433CFF /* Frameworks */,
+				3B6A7D521880809600433CFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RaspiDuinoRemote;
+			productName = RaspiDuinoRemote;
+			productReference = 3B6A7D541880809600433CFF /* RaspiDuinoRemote.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3B6A7D741880809600433CFF /* RaspiDuinoRemoteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B6A7D891880809600433CFF /* Build configuration list for PBXNativeTarget "RaspiDuinoRemoteTests" */;
+			buildPhases = (
+				3B6A7D711880809600433CFF /* Sources */,
+				3B6A7D721880809600433CFF /* Frameworks */,
+				3B6A7D731880809600433CFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B6A7D7B1880809600433CFF /* PBXTargetDependency */,
+			);
+			name = RaspiDuinoRemoteTests;
+			productName = RaspiDuinoRemoteTests;
+			productReference = 3B6A7D751880809600433CFF /* RaspiDuinoRemoteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3B6A7D4C1880809600433CFF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Arnaud Boudou";
+				TargetAttributes = {
+					3B6A7D741880809600433CFF = {
+						TestTargetID = 3B6A7D531880809600433CFF;
+					};
+				};
+			};
+			buildConfigurationList = 3B6A7D4F1880809600433CFF /* Build configuration list for PBXProject "RaspiDuinoRemote" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3B6A7D4B1880809600433CFF;
+			productRefGroup = 3B6A7D551880809600433CFF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B6A7D531880809600433CFF /* RaspiDuinoRemote */,
+				3B6A7D741880809600433CFF /* RaspiDuinoRemoteTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3B6A7D521880809600433CFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B6A7D701880809600433CFF /* Images.xcassets in Resources */,
+				3B9F14FF188191D700B9C097 /* move_center@2x.png in Resources */,
+				3B6A7D621880809600433CFF /* InfoPlist.strings in Resources */,
+				3B9F1503188191D700B9C097 /* move_stop@2x.png in Resources */,
+				3B6A7D6B1880809600433CFF /* Main.storyboard in Resources */,
+				3B6A7D9C188089B100433CFF /* lightoff@2x.png in Resources */,
+				3B9F1500188191D700B9C097 /* move_forward@2x.png in Resources */,
+				3B6A7D9D188089B100433CFF /* lighton@2x.png in Resources */,
+				3B6A7D921880811600433CFF /* video@2x.png in Resources */,
+				3B9F14FE188191D700B9C097 /* move_backward@2x.png in Resources */,
+				3B6A7D911880811600433CFF /* SettingsViewController.xib in Resources */,
+				3B9F1502188191D700B9C097 /* move_right@2x.png in Resources */,
+				3B9F1501188191D700B9C097 /* move_left@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B6A7D731880809600433CFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B6A7D811880809600433CFF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B6A7D501880809600433CFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B6A7D6E1880809600433CFF /* ViewController.m in Sources */,
+				3B6A7D681880809600433CFF /* AppDelegate.m in Sources */,
+				3B6A7D641880809600433CFF /* main.m in Sources */,
+				3B6A7D901880811600433CFF /* SettingsViewController.m in Sources */,
+				3B6A7D97188081DB00433CFF /* MotionJpegImageView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B6A7D711880809600433CFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B6A7D831880809600433CFF /* RaspiDuinoRemoteTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3B6A7D7B1880809600433CFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3B6A7D531880809600433CFF /* RaspiDuinoRemote */;
+			targetProxy = 3B6A7D7A1880809600433CFF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3B6A7D601880809600433CFF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B6A7D611880809600433CFF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3B6A7D691880809600433CFF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B6A7D6A1880809600433CFF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3B6A7D7F1880809600433CFF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B6A7D801880809600433CFF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3B6A7D841880809600433CFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3B6A7D851880809600433CFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3B6A7D871880809600433CFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RaspiDuinoRemote/RaspiDuinoRemote-Prefix.pch";
+				INFOPLIST_FILE = "RaspiDuinoRemote/RaspiDuinoRemote-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3B6A7D881880809600433CFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RaspiDuinoRemote/RaspiDuinoRemote-Prefix.pch";
+				INFOPLIST_FILE = "RaspiDuinoRemote/RaspiDuinoRemote-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3B6A7D8A1880809600433CFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RaspiDuinoRemote.app/RaspiDuinoRemote";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RaspiDuinoRemote/RaspiDuinoRemote-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RaspiDuinoRemoteTests/RaspiDuinoRemoteTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3B6A7D8B1880809600433CFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RaspiDuinoRemote.app/RaspiDuinoRemote";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RaspiDuinoRemote/RaspiDuinoRemote-Prefix.pch";
+				INFOPLIST_FILE = "RaspiDuinoRemoteTests/RaspiDuinoRemoteTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3B6A7D4F1880809600433CFF /* Build configuration list for PBXProject "RaspiDuinoRemote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B6A7D841880809600433CFF /* Debug */,
+				3B6A7D851880809600433CFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B6A7D861880809600433CFF /* Build configuration list for PBXNativeTarget "RaspiDuinoRemote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B6A7D871880809600433CFF /* Debug */,
+				3B6A7D881880809600433CFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B6A7D891880809600433CFF /* Build configuration list for PBXNativeTarget "RaspiDuinoRemoteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B6A7D8A1880809600433CFF /* Debug */,
+				3B6A7D8B1880809600433CFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3B6A7D4C1880809600433CFF /* Project object */;
+}
