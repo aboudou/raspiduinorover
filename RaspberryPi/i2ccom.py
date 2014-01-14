@@ -3,11 +3,11 @@ import time
 import smbus
 
 from messages import *
- 
+
 class I2CCom(threading.Thread):
 
   def __init__(self, i2cbus, address):
-    """ 
+    """
     Init the I2CCom instance. Expected parameter is :
     - i2c bus number
     - address : the I2C address of the slave Arduino.
@@ -29,21 +29,26 @@ class I2CCom(threading.Thread):
 
   def run(self):
     """
-    Run I2C communications into a background thread. This function should not be called outside of this class.
+    Run I2C communications (grepping Arduino status) into a background thread. This function should not be called outside of this class.
     """
     while self.toTerminate == False:
       try:
         tmp = self.bus.read_i2c_block_data(self.address, 5)
         # Data from I2C slave is a 32 byte array. We just need the 5 firsts byte, which are (in order)
         #  - Light state (0: Off, 1: On)
-        #  - Motor A current, from 0 (0 Ampere) to 255 (2 Amperes) 
-        #  - Motor B current, from 0 (0 Ampere) to 255 (2 Amperes) 
+        #  - Motor A current, from 0 to 255
+        #  - Motor B current, from 0 to 255
         #  - Pan servo angle, in degrees
         #  - Tilt servo angle, in degrees
+        #
+        # Current is given by motor shield with a linear voltage :
+        #  - 0 volt means 0 ampere (value from Arduino : 0)
+        #  - 3.3 volts means 2 amperes (value from Arduino : 168) <-- max continuous current allowed by L298 motor driver
+        #  - 5 volt means 8,25 amperes (value from Arduino : 255) <-- largely over L298 motor driver electrical specifications
         self.data = str(tmp[0]) + "#" + str(tmp[1]) + "#" + str(tmp[2]) + "#" + str(tmp[3]) + "#" + str(tmp[4])
-        
+
       except IOError:
-        # Silently ignore error
+        # (Mostly) silently ignore error
         print ("**** I2C error ****")
 
       time.sleep(0.5)
@@ -63,10 +68,8 @@ class I2CCom(threading.Thread):
       else:
         self.bus.write_i2c_block_data(self.address, message, [param])
 
-      #time.sleep(0.2)
-
     except IOError:
-      # Silently ignore error
+      # (Mostly) silently ignore error
       print ("**** I2C error ****")
 
 

@@ -31,4 +31,3 @@ CMD_TURN_RIGHT = 34
 #  - Pan & Tilt servo to 90 degrees
 #  - Motors off
 CMD_RESET = 255
-
