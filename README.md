@@ -84,3 +84,6 @@ Some photos of the assembly
 
 ![Camera module lighting details](/Images/camera_module_details.jpg "Camera module lighting details")
 <div style="text-align: center; font-style: italic">Camera module lighting details</div>
+
+![iOS remote](/Images/remote_interface.png "iOS remote")
+<div style="text-align: center; font-style: italic">iOS remote, with motor current usage</div>
