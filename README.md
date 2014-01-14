@@ -26,8 +26,8 @@ RaspiDuinoRover is made of three main parts :
 * An Arduino Uno which will receive commands from the Raspberry Pi though an I2C connexion, and accordingly drives rover motors (with the help of an Arduino Motor Shield) and position pan and tilt servos. It will regularly get infos about pan and tilt servo positions, camera lighting status and motors current usage, and send it back to the Raspberry Pi when asked for.
 * An iOS device which will serve as a remote control for the rover. It will connect to the Raspberry Pi through a TCP connection, and display its MJPEG video stream.
 
-![Flowchart](/Images/flowchart.png "Flowchart")
-
+![Wiring diagram](/Images/flowchart.png "Wiring diagram")
+<div style="text-align: center; font-style: italic">Wiring diagram</div>
 
 Requirements
 ------------
@@ -77,3 +77,10 @@ How to use RaspiDuinoRemote (iPhone)
 Just open XCode project then build and install RaspiDuinoRemote on your iDevice. If you don't have an Apple iOS Developper account, you may use RaspiDuinoRemote within iOS Simulator.
 
 When application is started, enter hostname (or IP adress) of your Raspberry Pi, the server port (default value is 8000, unless changed into “config.py” file) and MJPEG stream URL (if you use MJPEG Streamer, it should be “http://<raspberrypi_ip>:8080/?action=stream”. Then tap “Connect” button.
+
+
+Some photos of the assembly
+---------------------------
+
+![Camera module lighting details](/Images/camera_module_details.jpg "Camera module lighting details")
+<div style="text-align: center; font-style: italic">Camera module lighting details</div>
