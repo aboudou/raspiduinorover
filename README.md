@@ -29,6 +29,11 @@ RaspiDuinoRover is made of three main parts :
 ![Wiring diagram](/Images/flowchart.png "Wiring diagram")
 <div style="text-align: center; font-style: italic">Wiring diagram</div>
 
+The base of the rover will be made of a [Dagu Rover 5 Tracked Chassis](http://www.pololu.com/product/1550). The Raspberry Pi camera module will be mounted on a pan/tilt support with servos, and a lighting feature based on three white LED will be added to allow the use of the camera in the dark. It should be possible to replace camera module by a NoIR camera module and white LED with IR LED if you want / need a discreet illumination.
+
+Servo motors, Raspberry Pi, Arduino Uno and camera lighting will be powered by a common 5V power line. This 5V power may come from a wall power supply (at least 2A), while the chassis motors will have their own power source. It may be possible to make a common power supply for all items, including chassis motors, but this page won't cover this topic.
+
+
 Requirements
 ------------
 
