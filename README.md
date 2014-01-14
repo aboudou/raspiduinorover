@@ -17,6 +17,18 @@ The following links don't refer to this project
 * [MovingRaspi - Part 3: The final assembly](http://goddess-gate.com/projects/en/raspi/movingraspip03)
 
 
+Architecture
+------------
+
+RaspiDuinoRover is made of three main parts :
+
+* A Raspberry Pi which will receive commands from a remote device through a TCP connexion, and will send these commands to an Arduino Uno through an I2C connection. The same TCP channel will be use to send back to the remote data grabbed from the Arduino Uno about pan and tilt servo positions, camera lighting status and motors current usage. The Raspberry Pi also provides an MJPEG video stream from its camera module. 
+* An Arduino Uno which will receive commands from the Raspberry Pi though an I2C connexion, and accordingly drives rover motors (with the help off an Arduino Motor Shield) and position pan and tilt servos. It will regularly get infos about pan and tilt servo positions, camera lighting status and motors current usage, and send it back to the Raspberry Pi when asked for.
+* An iOS device which will serve as a remote control for the rover. It will connect to the Raspberry Pi through a TCP connection, and display its MJPEG video stream.
+
+![Flowchart](/Images/flowchart.png "Flowchart")
+
+
 Requirements
 ------------
 
