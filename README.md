@@ -81,7 +81,7 @@ How to use RaspiDuinoRemote (iPhone)
 
 Just open XCode project then build and install RaspiDuinoRemote on your iDevice. If you don't have an Apple iOS Developper account, you may use RaspiDuinoRemote within iOS Simulator.
 
-When application is started, enter hostname (or IP adress) of your Raspberry Pi, the server port (default value is 8000, unless changed into “config.py” file) and MJPEG stream URL (if you use MJPEG Streamer, it should be “http://<raspberrypi_ip>:8080/?action=stream”. Then tap “Connect” button.
+When application is started, enter hostname (or IP adress) of your Raspberry Pi, the server port (default value is 8000, unless changed into “config.py” file) and MJPEG stream URL (if you use MJPEG Streamer, it should be “http://&lt;raspberrypi_ip&gt;:8080/?action=stream”. Then tap “Connect” button.
 
 
 Some photos of the assembly
