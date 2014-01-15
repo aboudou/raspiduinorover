@@ -60,10 +60,22 @@ To help you with the assembly, you may refer to the following files :
 * PowerRail.fzz: details for the commond power rails.
 
 
+Breadboard assembly and schematics
+----------------------------------
+
+![Camera module lighting details](/Images/breadboard.png "Breadboard assembly")
+<div style="text-align: center; font-style: italic">Breadboard assembly</div>
+
+![iOS remote](/Images/schematics.png "iOS remote")
+<div style="text-align: center; font-style: italic">Schematics</div>
+
+
 How to use RaspiDuinoRover (server)
 -----------------------------------
 
 You'll first have to upload “Arduino/Arduino.uno” sketch to your Ardunio Uno then build the assembly.
+
+__Important:__ Don't forget to cut “Vin” jumper on the backside of the shield.
 
 Then you have to install MJPEG Streamer, following [these steps (steps 1 to 6)](http://blog.miguelgrinberg.com/post/how-to-build-and-run-mjpg-streamer-on-the-raspberry-pi).
 
