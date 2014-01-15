@@ -81,9 +81,9 @@ Then you have to install MJPEG Streamer, following [these steps (steps 1 to 6)](
 
 You may want to install a fresher version of [raspimjpeg](http://www.raspberrypi.org/forums/viewtopic.php?t=61771) even if a working binary is provided (into ”./RaspberryPi/bin/” folder).
 
-Then update “config.py” file to fit your needs.
+Then update “./RaspberryPi/config.py” file to fit your needs.
 
-When you're done, just launch MovingRaspi with `./RaspberryPi/raspiduinorover.sh start` as root user. When you want / need to stop it, just execute `./RaspberryPi/raspiduinorover.sh stop` as root user.
+When you're done, just launch RaspiDuinoRover with `./RaspberryPi/raspiduinorover.sh start` as root user. When you want / need to stop it, just execute `./RaspberryPi/raspiduinorover.sh stop` as root user.
 
 The start script will first start streaming from camera module (have a look to ”./RaspberryPi/bin/stream.sh” script) then start RaspiDuinoRover server.
 
