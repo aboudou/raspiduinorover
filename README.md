@@ -7,15 +7,8 @@ RaspiDuinoRover
 
 RaspiDuinoRover is a project about making a rover with a Raspberry Pi (and its camera module) and an Arduino Uno, and controlling it with an iPhone.
 
-The following links don't refer to this project
-
-* [Youtube video of iPhone controls concept](http://www.youtube.com/watch?v=zaB3agbCoIY)
-* [Youtube video of the final assembly](http://www.youtube.com/watch?v=nw-39-aKUKc)
-* [MovingRaspi - Project's summary](http://goddess-gate.com/projects/en/raspi/movingraspi)
-* [MovingRaspi - Part 1: First steps](http://goddess-gate.com/projects/en/raspi/movingraspip01)
-* [MovingRaspi - Part 2: iPhone -> Raspberry Pi communication](http://goddess-gate.com/projects/en/raspi/movingraspip02)
-* [MovingRaspi - Part 3: The final assembly](http://goddess-gate.com/projects/en/raspi/movingraspip03)
-
+* [Youtube video of work in progress](http://www.youtube.com/watch?v=gQM0dTXNIe4)
+* [RaspiDuinoRover - Project's site](http://goddess-gate.com/projects/en/raspi/raspiduinorover)
 
 Architecture
 ------------
