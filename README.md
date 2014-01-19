@@ -19,8 +19,11 @@ RaspiDuinoRover is made of three main parts :
 * An Arduino Uno which will receive commands from the Raspberry Pi though an I2C connection, and accordingly drives rover motors (with the help of an Arduino Motor Shield) and position pan and tilt servos. It will regularly get infos about pan and tilt servo positions, camera lighting status and motors current usage, and send it back to the Raspberry Pi when asked for.
 * An iOS device which will serve as a remote control for the rover. It will connect to the Raspberry Pi through a TCP connection, and display its MJPEG video stream.
 
-![Wiring diagram](/Images/flowchart.png "Wiring diagram")
-<div style="text-align: center; font-style: italic">Wiring diagram</div>
+<p align="center">
+  <img src="/Images/flowchart.png" title="Wiring diagram" alt="Wiring diagram" />
+  <br/>
+  <em>Wiring diagram</em>
+</p>
 
 The base of the rover will be made of a [Dagu Rover 5 Tracked Chassis](http://www.pololu.com/product/1550). The Raspberry Pi camera module will be mounted on a pan/tilt support with servos, and a lighting feature based on three white LED will be added to allow the use of the camera in the dark. It should be possible to replace camera module by a NoIR camera module and white LED with IR LED if you want / need a discreet illumination.
 
@@ -56,11 +59,17 @@ To help you with the assembly, you may refer to the following files :
 Breadboard assembly and schematics
 ----------------------------------
 
-![Camera module lighting details](/Images/breadboard.png "Breadboard assembly")
-<div style="text-align: center; font-style: italic">Breadboard assembly</div>
+<p align="center">
+  <img src="/Images/breadboard.png" alt="Breadboard assembly" title="Breadboard assembly" />
+  <br/>
+  <em>Breadboard assembly</em>
 
-![iOS remote](/Images/schematics.png "iOS remote")
-<div style="text-align: center; font-style: italic">Schematics</div>
+  <br/><br/>
+
+  <img src="/Images/schematics.png" alt="iOS remote" title="iOS remote" />
+  <br/>
+  <em>Schematics</em>
+</p>
 
 
 How to use RaspiDuinoRover (server)
@@ -92,8 +101,14 @@ When application is started, enter hostname (or IP adress) of your Raspberry Pi,
 Some photos of the assembly
 ---------------------------
 
-![Camera module lighting details](/Images/camera_module_details.jpg "Camera module lighting details")
-<div style="text-align: center; font-style: italic">Camera module lighting details</div>
+<p align="center">
+  <img src="/Images/camera_module_details.jpg" title="Camera module lighting details" alt="Camera module lighting details" />
+  <br/>
+  <em>Camera module lighting details</em>
 
-![iOS remote](/Images/remote_interface.png "iOS remote")
-<div style="text-align: center; font-style: italic">iOS remote, with motor current usage</div>
+  <br/><br/>
+
+  <img src="/Images/remote_interface.png" title="iOS remote" alt="iOS remote" />
+  <br/>
+  <em>iOS remote, with motor current usage</em>
+</p>
