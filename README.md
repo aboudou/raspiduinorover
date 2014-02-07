@@ -15,9 +15,9 @@ Architecture
 
 RaspiDuinoRover is made of three main parts :
 
-* A Raspberry Pi which will receive commands from a remote device through a TCP connection, and will send these commands to an Arduino Uno through an I2C connection. The same TCP channel will be use to send back to the remote data grabbed from the Arduino Uno about pan and tilt servo positions, camera lighting status and motors current usage. The Raspberry Pi also provides an MJPEG video stream from its camera module. 
-* An Arduino Uno which will receive commands from the Raspberry Pi though an I2C connection, and accordingly drives rover motors (with the help of an Arduino Motor Shield) and position pan and tilt servos. It will regularly get infos about pan and tilt servo positions, camera lighting status and motors current usage, and send it back to the Raspberry Pi when asked for.
-* An iOS device which will serve as a remote control for the rover. It will connect to the Raspberry Pi through a TCP connection, and display its MJPEG video stream.
+* A Raspberry Pi which receives commands from a remote device through a TCP connection, and sends these commands to an Arduino Uno through an I2C connection. The same TCP channel is used to send back to the remote data grabbed from the Arduino Uno about pan and tilt servo positions, camera lighting status and motors current usage. The Raspberry Pi also provides an MJPEG video stream from its camera module. 
+* An Arduino Uno which receives commands from the Raspberry Pi though an I2C connection, and accordingly drives rover motors (with the help of an Arduino Motor Shield) and positions pan and tilt servos. It regularly gets infos about pan and tilt servo positions, camera lighting status and motors current usage, and send it back to the Raspberry Pi when asked for.
+* An iOS device which serves as a remote control for the rover. It connects to the Raspberry Pi through a TCP connection, and displays its MJPEG video stream.
 
 <p align="center">
   <img src="/Images/flowchart.png" title="Wiring diagram" alt="Wiring diagram" />
@@ -25,9 +25,9 @@ RaspiDuinoRover is made of three main parts :
   <em>Wiring diagram</em>
 </p>
 
-The base of the rover will be made of a [Dagu Rover 5 Tracked Chassis](http://www.pololu.com/product/1550). The Raspberry Pi camera module will be mounted on a pan/tilt support with servos, and a lighting feature based on three white LED will be added to allow the use of the camera in the dark. It should be possible to replace camera module by a NoIR camera module and white LED with IR LED if you want / need a discreet illumination.
+The base of the rover is made of a [Dagu Rover 5 Tracked Chassis](http://www.pololu.com/product/1550). The Raspberry Pi camera module is mounted on a pan/tilt support with servos, and a lighting feature based on three white LED is added to allow the use of the camera in the dark. It should be possible to replace camera module by a NoIR camera module and white LED with IR LED if you want / need a discreet illumination.
 
-Servo motors, Raspberry Pi, Arduino Uno and camera lighting will be powered by a common 5V power line. This 5V power may come from a wall power supply (at least 2A), while the chassis motors will have their own power source. It may be possible to make a common power supply for all items, including chassis motors, but this page won't cover this topic.
+Servo motors, Raspberry Pi, Arduino Uno and camera lighting are powered by a common 5V power line. This 5V power may come from a wall power supply (at least 2A), while the chassis motors have their own power source. It may be possible to make a common power supply for all items, including chassis motors, but this page won't cover this topic.
 
 
 Requirements
@@ -105,6 +105,12 @@ Some photos of the assembly
   <img src="/Images/camera_module_details.jpg" title="Camera module lighting details" alt="Camera module lighting details" />
   <br/>
   <em>Camera module lighting details</em>
+
+  <br/><br/>
+
+  <img src="/Images/raspiduinorover_wip.jpg" title="Work in progress" alt="Work in progress" />
+  <br/>
+  <em>Work in progress</em>
 
   <br/><br/>
 
