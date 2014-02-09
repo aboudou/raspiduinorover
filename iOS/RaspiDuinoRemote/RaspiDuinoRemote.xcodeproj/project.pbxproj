@@ -24,9 +24,9 @@
 		3B6A7D901880811600433CFF /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A7D8D1880811600433CFF /* SettingsViewController.m */; };
 		3B6A7D911880811600433CFF /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6A7D8E1880811600433CFF /* SettingsViewController.xib */; };
 		3B6A7D921880811600433CFF /* video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6A7D8F1880811600433CFF /* video@2x.png */; };
-		3B6A7D97188081DB00433CFF /* MotionJpegImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A7D96188081DB00433CFF /* MotionJpegImageView.m */; };
 		3B6A7D9C188089B100433CFF /* lightoff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6A7D9A188089B100433CFF /* lightoff@2x.png */; };
 		3B6A7D9D188089B100433CFF /* lighton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6A7D9B188089B100433CFF /* lighton@2x.png */; };
+		3B8A6FB218A781AC00F4B585 /* MotionJpegImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A6FB118A781AC00F4B585 /* MotionJpegImageView.m */; };
 		3B9F14FE188191D700B9C097 /* move_backward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9F14F8188191D700B9C097 /* move_backward@2x.png */; };
 		3B9F14FF188191D700B9C097 /* move_center@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9F14F9188191D700B9C097 /* move_center@2x.png */; };
 		3B9F1500188191D700B9C097 /* move_forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9F14FA188191D700B9C097 /* move_forward@2x.png */; };
@@ -69,10 +69,10 @@
 		3B6A7D8D1880811600433CFF /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		3B6A7D8E1880811600433CFF /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		3B6A7D8F1880811600433CFF /* video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video@2x.png"; sourceTree = "<group>"; };
-		3B6A7D95188081DB00433CFF /* MotionJpegImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionJpegImageView.h; sourceTree = "<group>"; };
-		3B6A7D96188081DB00433CFF /* MotionJpegImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionJpegImageView.m; sourceTree = "<group>"; };
 		3B6A7D9A188089B100433CFF /* lightoff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lightoff@2x.png"; sourceTree = "<group>"; };
 		3B6A7D9B188089B100433CFF /* lighton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lighton@2x.png"; sourceTree = "<group>"; };
+		3B8A6FB018A781AC00F4B585 /* MotionJpegImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MotionJpegImageView.h; path = External/MotionJpegImageView/MotionJpegImageView.h; sourceTree = SOURCE_ROOT; };
+		3B8A6FB118A781AC00F4B585 /* MotionJpegImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MotionJpegImageView.m; path = External/MotionJpegImageView/MotionJpegImageView.m; sourceTree = SOURCE_ROOT; };
 		3B9F14F8188191D700B9C097 /* move_backward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "move_backward@2x.png"; sourceTree = "<group>"; };
 		3B9F14F9188191D700B9C097 /* move_center@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "move_center@2x.png"; sourceTree = "<group>"; };
 		3B9F14FA188191D700B9C097 /* move_forward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "move_forward@2x.png"; sourceTree = "<group>"; };
@@ -195,8 +195,8 @@
 		3B6A7D94188081DB00433CFF /* MotionJpegImageView */ = {
 			isa = PBXGroup;
 			children = (
-				3B6A7D95188081DB00433CFF /* MotionJpegImageView.h */,
-				3B6A7D96188081DB00433CFF /* MotionJpegImageView.m */,
+				3B8A6FB018A781AC00F4B585 /* MotionJpegImageView.h */,
+				3B8A6FB118A781AC00F4B585 /* MotionJpegImageView.m */,
 			);
 			path = MotionJpegImageView;
 			sourceTree = "<group>";
@@ -328,7 +328,7 @@
 				3B6A7D681880809600433CFF /* AppDelegate.m in Sources */,
 				3B6A7D641880809600433CFF /* main.m in Sources */,
 				3B6A7D901880811600433CFF /* SettingsViewController.m in Sources */,
-				3B6A7D97188081DB00433CFF /* MotionJpegImageView.m in Sources */,
+				3B8A6FB218A781AC00F4B585 /* MotionJpegImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,6 +22,7 @@
     NSTimer *_dataTimer;
     NSTimer *_panServoTimer;
     NSTimer *_tiltServoTimer;
+    NSTimer *_videoStreamTimer;
 }
 
 @property(nonatomic, strong) IBOutlet UIButton *connect;
