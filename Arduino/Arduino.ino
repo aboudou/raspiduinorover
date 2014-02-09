@@ -47,10 +47,12 @@
 #define PIN_MOTOR_CURRENT_B A1
 
 // Definition of min and max servos angles
-#define MIN_PAN_ANGLE 0
-#define MAX_PAN_ANGLE 180
-#define MIN_TILT_ANGLE 60
-#define MAX_TILT_ANGLE 120
+// You might have to switch left/right and up/down values
+//   depending on servos placement
+#define MAX_LEFT_ANGLE 180
+#define MAX_RIGHT_ANGLE 0
+#define MAX_DOWN_ANGLE 120
+#define MAX_UP_ANGLE 0
 
 
 // Servo objects
@@ -65,8 +67,30 @@ volatile byte param = 0;
 volatile byte motorCurrentA;
 volatile byte motorCurrentB;
 volatile byte lightState;
-volatile byte panAngle;
-volatile byte tiltAngle;
+volatile int panAngle;  // To understand use of int instead of byte, see below
+volatile int tiltAngle; // To understand use of int instead of byte, see below
+
+/*
+ * I use int for servoAngle values because of the way I use constrain() to limit
+ * servo angle values. The issue is when I decrease angle value, and minimum angle
+ * values of 0.
+ *
+ * The behavior is the following:
+ * - Decrease current angle by 1
+ * - Constrain value between min and max angle values
+ *
+ * With byte values, and minimum angle value of 0, I got the following behavior:
+ * currentAngle = 0
+ * currentAngle - 1 = 255 (byte range is from 0 to 255, no negative values possible)
+ * after constrain: currentAngle = maxAngle value
+ * You will see the servo jump from its min angle position to its max angle position.
+ *
+ * With int values, and minimum angle value of 0, I got the following behavior:
+ * currentAngle = 0
+ * currentAngle - 1 = -1 (int range is from -32,768 to 32,767)
+ * after constrain: currentAngle = 0
+ * The servo will stay at its current position.
+ */
 
 void setup() {
   // Start as I2C slave device, with adress 0x42 (we don't know the question yet)
@@ -210,33 +234,50 @@ void switchLight() {
 
 // Move pan servo left
 void moveServoPanLeft() {
-  // Depending on servo placement, you may have to use panAngle-- instead
-  panAngle++;
-  panAngle = constrain(panAngle, MIN_PAN_ANGLE, MAX_PAN_ANGLE);
+  if (MAX_RIGHT_ANGLE > MAX_LEFT_ANGLE) {
+    panAngle--;
+    panAngle = constrain(panAngle, MAX_LEFT_ANGLE, MAX_RIGHT_ANGLE);
+  } else { 
+    panAngle++;
+    panAngle = constrain(panAngle, MAX_RIGHT_ANGLE, MAX_LEFT_ANGLE);
+  }
   servoPan.write(panAngle);
 }
 
 // Move pan servo right
 void moveServoPanRight() {
   // Depending on servo placement, you may have to use panAngle++ instead
-  panAngle--;
-  panAngle = constrain(panAngle, MIN_PAN_ANGLE, MAX_PAN_ANGLE);
+  if (MAX_RIGHT_ANGLE > MAX_LEFT_ANGLE) {
+    panAngle++;
+    panAngle = constrain(panAngle, MAX_LEFT_ANGLE, MAX_RIGHT_ANGLE);
+  } else { 
+    panAngle--;
+    panAngle = constrain(panAngle, MAX_RIGHT_ANGLE, MAX_LEFT_ANGLE);
+  }
   servoPan.write(panAngle);
 }
 
 // Move tilt servo up
 void moveServoTiltUp() {
-  // Depending on servo placement, you may have to use titlAngle++ instead
-  tiltAngle--;
-  tiltAngle = constrain(tiltAngle, MIN_TILT_ANGLE, MAX_TILT_ANGLE);
+  if (MAX_UP_ANGLE > MAX_DOWN_ANGLE) {
+    tiltAngle++;
+    tiltAngle = constrain(tiltAngle, MAX_DOWN_ANGLE, MAX_UP_ANGLE);
+  } else {
+    tiltAngle--;
+    tiltAngle = constrain(tiltAngle, MAX_UP_ANGLE, MAX_DOWN_ANGLE);
+  }
   servoTilt.write(tiltAngle);
 }
 
 // Move tilt servo down
 void moveServoTiltDown() {
-  // Depending on servo placement, you may have to use titlAngle-- instead
-  tiltAngle++;
-  tiltAngle = constrain(tiltAngle, MIN_TILT_ANGLE, MAX_TILT_ANGLE);
+  if (MAX_UP_ANGLE > MAX_DOWN_ANGLE) {
+    tiltAngle--;
+    tiltAngle = constrain(tiltAngle, MAX_DOWN_ANGLE, MAX_UP_ANGLE);
+  } else {
+    tiltAngle++;
+    tiltAngle = constrain(tiltAngle, MAX_UP_ANGLE, MAX_DOWN_ANGLE);
+  }
   servoTilt.write(tiltAngle);
 }
 
@@ -294,7 +335,7 @@ void turnRight() {
 // Make rover goes to default state
 //  - Light switched off
 //  - Motors stopped
-//   - Servos centered
+//  - Servos centered
 void reset() {
   digitalWrite(PIN_LIGHT, LOW);
   moveStop();
