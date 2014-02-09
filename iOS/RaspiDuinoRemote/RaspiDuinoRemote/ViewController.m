@@ -195,7 +195,13 @@
     [self performSelectorInBackground:@selector(waitForConnection:) withObject:nil];
     
     if ([_currentMjpegUrl length] > 0) {
-        [self performSelector:@selector(startVideoStream) withObject:nil];
+        // Wait 1.5 second after connection in order to let video stream start
+        _videoStreamTimer = [NSTimer scheduledTimerWithTimeInterval:1.5
+                                                             target:self
+                                                           selector:@selector(startVideoStream)
+                                                           userInfo:nil
+                                                            repeats:NO];
+
     }
 }
 
@@ -291,6 +297,7 @@
     NSURL *url = [NSURL URLWithString:_currentMjpegUrl];
     self.streamView.url = url;
     [self.streamView play];
+    [_videoStreamTimer invalidate];
 }
 
 
