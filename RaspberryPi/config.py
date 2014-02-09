@@ -1,3 +1,5 @@
+import os
+
 """
 " Edit below this line to fit your needs
 """
@@ -14,7 +16,9 @@ I2CBUS = 1
 # I2C address of the slave Arduino
 ADDRESS = 0x42
 
+# Get path of config file
+CONFIG_PATH = os.path.dirname(os.path.realpath(__file__))
 # Streaming start script
-STREAM_START = ["./bin/stream.sh", "start"]
+STREAM_START = [CONFIG_PATH + "/bin/stream.sh", "start"]
 # Streaming stop script
-STREAM_STOP = ["./bin/stream.sh", "stop"]
+STREAM_STOP = [CONFIG_PATH + "/bin/stream.sh", "stop"]
