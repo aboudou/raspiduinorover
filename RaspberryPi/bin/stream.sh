@@ -5,10 +5,7 @@ DIR=$(cd $(dirname "$0"); pwd)
 case "$1" in
   start)
 
-    # Create a 1MB RAM disk to store jpeg frames. It will avoid
-    #   to wear SD card with to much writes.
-    /sbin/mkfs -q /dev/ram1 1024
-    /bin/mkdir -p /ramcache
+    # Mount RAM cache
     /bin/mount /dev/ram1 /ramcache
 
     # Start raspimjpeg which will capture frames from camera module

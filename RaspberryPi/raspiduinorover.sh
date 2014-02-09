@@ -8,6 +8,12 @@ DIR=$(cd $(dirname "$0"); pwd)
 case "$1" in
   start)
 
+    # Create a 1MB RAM disk to store jpeg frames. It will avoid
+    #   to wear SD card with to much writes.
+    # Will be used by video streaming
+    /sbin/mkfs -q /dev/ram1 1024
+    /bin/mkdir -p /ramcache
+
     # Start RaspDuinoRover
     `which python` "${DIR}"/server.py &
 
