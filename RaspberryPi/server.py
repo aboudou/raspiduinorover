@@ -6,12 +6,31 @@ from i2ccom import *
 
 import os
 import signal
+import subprocess
 
 # Protocol for managing remote commands
-class RaspiDuinoRover(Protocol):
+class RaspiDuinoRoverProtocol(Protocol):
   def connectionMade(self):
     reset()
+    # Start streaming
+    if (self.factory.numProtocols == 0):
+      try:
+        p = subprocess.Popen(STREAM_START, stdout=subprocess.PIPE)
+      except OSError as detail:
+        print ("Could not execute " + STREAM_START[0] + " ", detail)
+    self.factory.numProtocols = self.factory.numProtocols + 1
     print("A client connected")
+
+  def connectionLost(self, reason):
+    reset()
+    # Stop streaming
+    self.factory.numProtocols = self.factory.numProtocols - 1
+    if (self.factory.numProtocols == 0):
+      try:
+        p = subprocess.Popen(STREAM_STOP, stdout=subprocess.PIPE)
+      except OSError as detail:
+        print ("Could not execute " + STREAM_STOP[0] + " ", detail)
+    print("A client disconnected")
 
   def dataReceived(self, data):
     if data == "light":
@@ -53,6 +72,12 @@ class RaspiDuinoRover(Protocol):
     elif data == "reset":
       reset()
 
+# Factory for RaspiDuinoRoverProtocol
+class RaspiDuinoRoverFactory(Factory):
+  protocol = RaspiDuinoRoverProtocol
+  numProtocols = 0
+
+
 # Reset rover state
 def reset():
   i2ccom.sendMessage(CMD_RESET, -1)
@@ -87,7 +112,7 @@ i2ccom = I2CCom(I2CBUS, ADDRESS)
 i2ccom.start()
 
 # Init and start server
-factory = Factory()
-factory.protocol = RaspiDuinoRover
+factory = RaspiDuinoRoverFactory()
+factory.protocol = RaspiDuinoRoverProtocol
 reactor.listenTCP(PORT, factory, 50, IFACE)
 reactor.run()

@@ -87,7 +87,9 @@ Then update “./RaspberryPi/config.py” file to fit your needs.
 
 When you're done, just launch RaspiDuinoRover with `./RaspberryPi/raspiduinorover.sh start` as root user. When you want / need to stop it, just execute `./RaspberryPi/raspiduinorover.sh stop` as root user.
 
-The start script will first start streaming from camera module (have a look to ”./RaspberryPi/bin/stream.sh” script) then start RaspiDuinoRover server.
+The start script will start RaspiDuinoRover server.
+
+Streaming will be started when a user connects to the server (have a look to ”./RaspberryPi/bin/stream.sh” script) and will be stopped when the last user disconnects.
 
 
 How to use RaspiDuinoRemote (iPhone)

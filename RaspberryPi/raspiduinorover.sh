@@ -8,9 +8,6 @@ DIR=$(cd $(dirname "$0"); pwd)
 case "$1" in
   start)
 
-    # Start MJPEG Streaming
-    "${DIR}"/bin/stream.sh start
-
     # Start RaspDuinoRover
     `which python` "${DIR}"/server.py &
 
@@ -23,9 +20,6 @@ case "$1" in
       `which rm` /var/run/raspiduinorover.pid
     fi
 
-    # Stop MJPEG Streaming
-    "${DIR}"/bin/stream.sh stop
-  
     ;;
 
   *)

@@ -13,3 +13,8 @@ I2CBUS = 1
 
 # I2C address of the slave Arduino
 ADDRESS = 0x42
+
+# Streaming start script
+STREAM_START = ["./bin/stream.sh", "start"]
+# Streaming stop script
+STREAM_STOP = ["./bin/stream.sh", "stop"]
