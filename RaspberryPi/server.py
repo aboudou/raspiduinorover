@@ -11,23 +11,23 @@ import subprocess
 # Protocol for managing remote commands
 class RaspiDuinoRoverProtocol(Protocol):
   def connectionMade(self):
-    reset()
     # Start streaming
     if (self.factory.numProtocols == 0):
       try:
         p = subprocess.Popen(STREAM_START, stdout=subprocess.PIPE)
+        connect()
       except OSError as detail:
         print ("Could not execute " + STREAM_START[0] + " ", detail)
     self.factory.numProtocols = self.factory.numProtocols + 1
     print("A client connected")
 
   def connectionLost(self, reason):
-    reset()
     # Stop streaming
     self.factory.numProtocols = self.factory.numProtocols - 1
     if (self.factory.numProtocols == 0):
       try:
         p = subprocess.Popen(STREAM_STOP, stdout=subprocess.PIPE)
+        disconnect()
       except OSError as detail:
         print ("Could not execute " + STREAM_STOP[0] + " ", detail)
     print("A client disconnected")
@@ -70,7 +70,7 @@ class RaspiDuinoRoverProtocol(Protocol):
       self.transport.write(i2ccom.data)
 
     elif data == "reset":
-      reset()
+      disconnect()
 
 # Factory for RaspiDuinoRoverProtocol
 class RaspiDuinoRoverFactory(Factory):
@@ -78,13 +78,21 @@ class RaspiDuinoRoverFactory(Factory):
   numProtocols = 0
 
 
-# Reset rover state
-def reset():
-  i2ccom.sendMessage(CMD_RESET, -1)
+# Connect to rover
+def connect():
+  i2ccom.start()
+  time.sleep(0.5)
+  i2ccom.sendMessage(CMD_CONNECT, -1)
+
+# Disconnect from rover
+def disconnect():
+  i2ccom.sendMessage(CMD_DISCONNECT, -1)
+  time.sleep(0.5)
+  i2ccom.stop()
 
 # Called on process interruption.
 def endProcess(signalnum = None, handler = None):
-  reset()
+  disconnect()
   i2ccom.stop()
   reactor.stop()
 
@@ -109,7 +117,6 @@ signal.signal(signal.SIGHUP, endProcess)
 
 # Init I2CCom
 i2ccom = I2CCom(I2CBUS, ADDRESS)
-i2ccom.start()
 
 # Init and start server
 factory = RaspiDuinoRoverFactory()
