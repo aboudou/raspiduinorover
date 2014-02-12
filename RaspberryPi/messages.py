@@ -26,8 +26,14 @@ CMD_TURN_LEFT = 33
 # I2C message to turn right
 CMD_TURN_RIGHT = 34
 
-# I2C message to reset rover to default settings:
+
+# I2C message to handle connection to rover
 #  - Light off
-#  - Pan & Tilt servo to 90 degrees
+#  - Pan & tilt servos to 90 degrees
 #  - Motors off
-CMD_RESET = 255
+CMD_CONNECT = 254
+# I2C message to handle disconnection from rover
+#  - Light off
+#  - Detach servo motors
+#  - Motors off
+CMD_DISCONNECT = 255
