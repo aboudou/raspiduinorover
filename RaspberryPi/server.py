@@ -116,6 +116,7 @@ signal.signal(signal.SIGINT, endProcess)
 signal.signal(signal.SIGHUP, endProcess)
 
 # Init I2CCom
+global i2ccom
 i2ccom = I2CCom(I2CBUS, ADDRESS)
 
 # Init and start server

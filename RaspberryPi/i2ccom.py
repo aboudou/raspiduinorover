@@ -23,6 +23,8 @@ class I2CCom(threading.Thread):
     """
     Start communicating with slave Arduino.
     """
+    self.terminated = False
+    self.toTerminate = False
     self.thread = threading.Thread(None, self.run, None, (), {})
     self.thread.start()
 
