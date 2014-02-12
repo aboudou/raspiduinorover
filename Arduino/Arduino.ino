@@ -345,8 +345,8 @@ void turnRight() {
 void roverDisconnect() {
   digitalWrite(PIN_LIGHT, LOW);
   moveStop();
-  servoPan.detach(PIN_SERVO_PAN);
-  servoTilt.detach(PIN_SERVO_TILT);
+  servoPan.detach();
+  servoTilt.detach();
 }
 
 void roverConnect() {
