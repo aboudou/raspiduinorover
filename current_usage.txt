@@ -1,0 +1,14 @@
+Raspberry Pi model B
+ - TL-WN723N USB Wireless adapter
+ - No keyboard, no HMDI / composite display
+ - No overclock
+ - Arduino UNO through I2C connection
+
+idle   : 180 mA
+
+active : 310 mA streaming
+         330 mA streaming + light
+         340 mA streaming + servo
+         360 mA streaming + servo + light
+         450 mA streaming + motors
+         470 mA streaming + motors + light
