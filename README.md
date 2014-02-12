@@ -1,7 +1,3 @@
-!! Beware - Work In Progress !!
-===============================
-
-
 RaspiDuinoRover
 ===============
 
