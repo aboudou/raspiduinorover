@@ -209,7 +209,6 @@
 - (IBAction)doDisconnect:(id)sender {
     [_dataTimer invalidate];
     
-    [self sendCommand:@"reset"];
     [_outputStream close];
     [_inputStream close];
     
