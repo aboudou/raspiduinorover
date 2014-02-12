@@ -4,6 +4,8 @@ Raspberry Pi model B
  - No overclock
  - Arduino UNO through I2C connection
 
+Current usage was measure at the input of the common power rail
+
 idle   : 180 mA
 
 active : 310 mA streaming
