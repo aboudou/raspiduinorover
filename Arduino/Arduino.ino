@@ -29,11 +29,16 @@
 // I2C message to turn right
 #define CMD_TURN_RIGHT 34
 
-// I2C message to reset rover to default settings:
+// I2C message to handle connection to rover
 //  - Light off
-//  - Pan & Tilt servo to 90°
+//  - Pan & tilt servos to 90 degrees
 //  - Motors off
-#define CMD_RESET 255
+#define CMD_CONNECT 254
+// I2C message to handle disconnection from rover
+//  - Light off
+//  - Detach servo motors
+//  - Motors off
+#define CMD_DISCONNECT 255
 
 // Definition of useful pins
 #define PIN_LIGHT 6
@@ -125,11 +130,8 @@ void setup() {
   pinMode(PIN_MOTOR_DIR_A, OUTPUT);
   pinMode(PIN_MOTOR_DIR_B, OUTPUT);
   
-  servoPan.attach(PIN_SERVO_PAN);
-  servoTilt.attach(PIN_SERVO_TILT);
-  
   // Switch to default state
-  reset();
+  roverDisconnect();
 }
 
 void loop() {
@@ -164,8 +166,12 @@ void loop() {
         turnRight();
         break;
   
-      case CMD_RESET:
-        reset();
+      case CMD_DISCONNECT:
+        roverDisconnect();
+        break;
+  
+      case CMD_CONNECT:
+        roverConnect();
         break;
   
       case CMD_SERVO_PAN_LEFT:
@@ -336,9 +342,20 @@ void turnRight() {
 //  - Light switched off
 //  - Motors stopped
 //  - Servos centered
-void reset() {
+void roverDisconnect() {
   digitalWrite(PIN_LIGHT, LOW);
   moveStop();
+  servoPan.detach(PIN_SERVO_PAN);
+  servoTilt.detach(PIN_SERVO_TILT);
+}
+
+void roverConnect() {
+  digitalWrite(PIN_LIGHT, LOW);
+  moveStop();
+  servoPan.attach(PIN_SERVO_PAN);
+  servoTilt.attach(PIN_SERVO_TILT);
   moveServoCenter();
 }
+  
+
 
