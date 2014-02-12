@@ -8,6 +8,7 @@ RaspiDuinoRover
 RaspiDuinoRover is a project about making a rover with a Raspberry Pi (and its camera module) and an Arduino Uno, and controlling it with an iPhone.
 
 * [Youtube video of work in progress](http://www.youtube.com/watch?v=DCWTQt_jFEk)
+* [Youtube video with tracked chassis](http://www.youtube.com/watch?v=M8OIg37Q50M)
 * [RaspiDuinoRover - Project's site](http://goddess-gate.com/projects/en/raspi/raspiduinorover)
 
 Architecture
