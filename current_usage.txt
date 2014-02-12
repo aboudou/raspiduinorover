@@ -1,16 +1,49 @@
 Raspberry Pi model B
  - TL-WN723N USB Wireless adapter
+ - Raspberry Pi camera module
  - No keyboard, no HMDI / composite display
  - No overclock
  - Arduino UNO through I2C connection
 
-Current usage was measure at the input of the common power rail
+Arduino UNO + Arduino Motor Shield
 
-idle   : 180 mA
+In this case, motors of tracked chassis are powered by the common power rail.
 
-active : 310 mA streaming
-         330 mA streaming + light
-         340 mA streaming + servo
-         360 mA streaming + servo + light
-         450 mA streaming + motors
-         470 mA streaming + motors + light
+
+
+Current usage was measured at the input of the common power rail, thus measuring current usage of
+ - Raspberry Pi
+ - Arduino Uno
+ - Arduino Motor Shield
+ - Pan / Tilt servos
+ - Lighting module
+ - Tracked chassis motors
+
+
+
+Idle mode is when nobody is connected to the rover:
+ - Raspberry Pi does not communicate with Arduino UNO
+ - Raspberry Pi camera module is stopped
+ - Tracked chassis motors are stopped
+ - Pan / Tilt servos are detached from Arduino (a.k.a. no signal on control pins)
+ - Lighting module is switched off
+
+Active mode is when someone is connected to the rover:
+ - Raspberry Pi regularly get status from Arduino UNO (every 0.5 seconds)
+ - Raspberry Pi camera module is running, with active streaming
+ - Tracked chassis motors may be running
+ - Pan / Tilt servos are attached to Arduino (a.k.a. signal on control pins), and may be moving
+ - Lighting module may be switched on
+
+
+
+Results:
+
+idle mode  : 180 mA
+
+active mode: 310 mA streaming (user just connected, no action)
+             330 mA streaming + lights on
+             340 mA streaming + servo moving
+             360 mA streaming + servo moving + lights on
+             450 mA streaming + motors running
+             470 mA streaming + motors running + lights on
