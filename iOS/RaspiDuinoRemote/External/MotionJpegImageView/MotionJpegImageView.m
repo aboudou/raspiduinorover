@@ -406,13 +406,13 @@ static NSData *_endMarkerData = nil;
     long long endLocation = endRange.location + endRange.length;
     if (_receivedData.length >= endLocation) 
     {
-        NSData *imageData = [_receivedData subdataWithRange:NSMakeRange(0, endLocation)];
+        NSData *imageData = [_receivedData subdataWithRange:NSMakeRange(0, (NSUInteger)endLocation)];
         UIImage *receivedImage = [UIImage imageWithData:imageData];
         if (receivedImage) 
         {
             self.image = receivedImage;
         }
-        [_receivedData replaceBytesInRange:NSMakeRange(0, endLocation) withBytes:NULL length:0];
+        [_receivedData replaceBytesInRange:NSMakeRange(0, (NSUInteger)endLocation) withBytes:NULL length:0];
     }
 }
 

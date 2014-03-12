@@ -276,7 +276,7 @@
 - (void)initNetworkCommunication {
     CFReadStreamRef readStream;
     CFWriteStreamRef writeStream;
-    CFStreamCreatePairWithSocketToHost(NULL, (CFStringRef)CFBridgingRetain(_currentHost), [_currentPort intValue], &readStream, &writeStream);
+    CFStreamCreatePairWithSocketToHost(NULL, (__bridge CFStringRef)_currentHost, [_currentPort intValue], &readStream, &writeStream);
     _outputStream = (NSOutputStream *)CFBridgingRelease(writeStream);
     _inputStream = (NSInputStream *)CFBridgingRelease(readStream);
     
