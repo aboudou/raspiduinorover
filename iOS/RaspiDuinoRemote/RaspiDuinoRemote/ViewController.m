@@ -191,7 +191,7 @@
     [self initNetworkCommunication];
     _connectInProgress = YES;
     
-    [self.status setText:@"Connection in progress…"];
+    [self.status setText:@"Connecting…"];
     [self performSelectorInBackground:@selector(waitForConnection:) withObject:nil];
     
     if ([_currentMjpegUrl length] > 0) {
@@ -260,14 +260,14 @@
         // Connect to RaspiDuinoRover server
         
         while (([_outputStream streamStatus] != NSStreamStatusOpen && [_outputStream streamStatus] != NSStreamStatusError) && _connectInProgress) {
-            [self.status performSelectorOnMainThread:@selector(setText:) withObject:@"Connection in progress…" waitUntilDone:YES];
+            [self.status performSelectorOnMainThread:@selector(setText:) withObject:@"Connecting…" waitUntilDone:YES];
         }
         if ([_outputStream streamStatus] == NSStreamStatusOpen) {
-            [self.status performSelectorOnMainThread:@selector(setText:) withObject:[NSString stringWithFormat:@"Connected to %@:%@", _currentHost, _currentPort] waitUntilDone:YES];
+            [self.status performSelectorOnMainThread:@selector(setText:) withObject:@"Connected" waitUntilDone:YES];
         } else if ([_outputStream streamStatus] == NSStreamStatusError) {
-            [self.status performSelectorOnMainThread:@selector(setText:) withObject:@"Could not connect to RaspiDuinoRover" waitUntilDone:YES];
+            [self.status performSelectorOnMainThread:@selector(setText:) withObject:@"Unable to connect" waitUntilDone:YES];
         } else {
-            [self.status performSelectorOnMainThread:@selector(setText:) withObject:@"Not connected to RaspiDuinoRover" waitUntilDone:YES];
+            [self.status performSelectorOnMainThread:@selector(setText:) withObject:@"Not connected" waitUntilDone:YES];
         }
     }
 }
