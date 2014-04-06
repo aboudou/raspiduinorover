@@ -52,6 +52,7 @@
 
 @property(nonatomic, strong) IBOutlet UIProgressView *pvMotorA;
 @property(nonatomic, strong) IBOutlet UIProgressView *pvMotorB;
+@property(nonatomic, strong) IBOutlet UIProgressView *pvSignal;
 
 @property(nonatomic, strong) IBOutlet MotionJpegImageView *streamView;
 

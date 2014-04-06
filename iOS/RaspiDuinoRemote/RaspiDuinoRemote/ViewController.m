@@ -45,11 +45,13 @@
 
     [self.pvMotorA setProgress:0.0f];
     [self.pvMotorB setProgress:0.0f];
+    [self.pvSignal setProgress:0.0f];
     
     CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 2.0f);
     transform = CGAffineTransformTranslate(transform, 0.0f, -1.0f);
     self.pvMotorA.transform = transform;
     self.pvMotorB.transform = transform;
+    self.pvSignal.transform = transform;
     
     [self.status setText:@"Not connected"];
 }
@@ -223,6 +225,7 @@
     [self.lblTiltDegrees setText:@""];
     [self.pvMotorA setProgress:0.0f];
     [self.pvMotorB setProgress:0.0f];
+    [self.pvSignal setProgress:0.0f];
 }
 
 
@@ -339,6 +342,8 @@
     NSString *motorCurrentB = [dataItems objectAtIndex:2];
     NSString *panAngle = [dataItems objectAtIndex:3];
     NSString *tiltAngle = [dataItems objectAtIndex:4];
+    NSString *signal = [dataItems objectAtIndex:5];
+    
     
     if ([lightState isEqualToString:@"0"]) {
         [self setLightButtonStatus:NO];
@@ -378,6 +383,20 @@
     
     [self.pvMotorA setProgress:progressA animated:YES];
     [self.pvMotorB setProgress:progressB animated:YES];
+    
+    // Signal strength
+    if (![signal isEqualToString:@"-1"]) {
+        float fSignal = [signal floatValue] / 100.0f;
+        if (fSignal > 0.8f) {
+            [self.pvSignal setProgressTintColor:[UIColor greenColor]];
+        } else if (fSignal > 0.7f) {
+            [self.pvSignal setProgressTintColor:[UIColor orangeColor]];
+        } else {
+            [self.pvSignal setProgressTintColor:[UIColor redColor]];
+        }
+        
+        [self.pvSignal setProgress:fSignal animated:YES];
+    }
 
 }
 
