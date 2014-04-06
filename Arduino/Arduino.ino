@@ -59,6 +59,9 @@
 #define MAX_DOWN_ANGLE 120
 #define MAX_UP_ANGLE 0
 
+// Tilt and Pan servo steps value
+#define TILT_SERVO_STEP 2;
+#define PAN_SERVO_STEP 2;
 
 // Servo objects
 Servo servoPan;
@@ -241,10 +244,10 @@ void switchLight() {
 // Move pan servo left
 void moveServoPanLeft() {
   if (MAX_RIGHT_ANGLE > MAX_LEFT_ANGLE) {
-    panAngle--;
+    panAngle -= PAN_SERVO_STEP;
     panAngle = constrain(panAngle, MAX_LEFT_ANGLE, MAX_RIGHT_ANGLE);
   } else { 
-    panAngle++;
+    panAngle += PAN_SERVO_STEP
     panAngle = constrain(panAngle, MAX_RIGHT_ANGLE, MAX_LEFT_ANGLE);
   }
   servoPan.write(panAngle);
@@ -254,10 +257,10 @@ void moveServoPanLeft() {
 void moveServoPanRight() {
   // Depending on servo placement, you may have to use panAngle++ instead
   if (MAX_RIGHT_ANGLE > MAX_LEFT_ANGLE) {
-    panAngle++;
+    panAngle += PAN_SERVO_STEP;
     panAngle = constrain(panAngle, MAX_LEFT_ANGLE, MAX_RIGHT_ANGLE);
   } else { 
-    panAngle--;
+    panAngle -= PAN_SERVO_STEP;
     panAngle = constrain(panAngle, MAX_RIGHT_ANGLE, MAX_LEFT_ANGLE);
   }
   servoPan.write(panAngle);
@@ -266,10 +269,10 @@ void moveServoPanRight() {
 // Move tilt servo up
 void moveServoTiltUp() {
   if (MAX_UP_ANGLE > MAX_DOWN_ANGLE) {
-    tiltAngle++;
+    tiltAngle += TILT_SERVO_STEP;
     tiltAngle = constrain(tiltAngle, MAX_DOWN_ANGLE, MAX_UP_ANGLE);
   } else {
-    tiltAngle--;
+    tiltAngle -= TILT_SERVO_STEP;
     tiltAngle = constrain(tiltAngle, MAX_UP_ANGLE, MAX_DOWN_ANGLE);
   }
   servoTilt.write(tiltAngle);
@@ -278,10 +281,10 @@ void moveServoTiltUp() {
 // Move tilt servo down
 void moveServoTiltDown() {
   if (MAX_UP_ANGLE > MAX_DOWN_ANGLE) {
-    tiltAngle--;
+    tiltAngle -= TILT_SERVO_STEP;
     tiltAngle = constrain(tiltAngle, MAX_DOWN_ANGLE, MAX_UP_ANGLE);
   } else {
-    tiltAngle++;
+    tiltAngle += TILT_SERVO_STEP;
     tiltAngle = constrain(tiltAngle, MAX_UP_ANGLE, MAX_DOWN_ANGLE);
   }
   servoTilt.write(tiltAngle);
