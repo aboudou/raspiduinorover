@@ -67,7 +67,17 @@ class RaspiDuinoRoverProtocol(Protocol):
       i2ccom.sendMessage(CMD_SERVO_CENTER, -1)
 
     elif data == "getData":
-      self.transport.write(i2ccom.data)
+      data = i2ccom.data
+      signal="-1"
+      if WLAN_ADAPTER != "":
+         try:
+           process = subprocess.Popen([CONFIG_PATH + "/bin/signal_check.sh", WLAN_ADAPTER], stdout=subprocess.PIPE)
+           out, err = process.communicate()
+           if len(out.splitlines()) == 1: 
+             signal = out.splitlines()[0]
+         except OSError as detail:
+           print ("Could not check signal strength ", detail)
+      self.transport.write(data + "#" + signal)
 
     elif data == "reset":
       disconnect()

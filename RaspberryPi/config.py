@@ -22,3 +22,7 @@ CONFIG_PATH = os.path.dirname(os.path.realpath(__file__))
 STREAM_START = [CONFIG_PATH + "/bin/stream.sh", "start"]
 # Streaming stop script
 STREAM_STOP = [CONFIG_PATH + "/bin/stream.sh", "stop"]
+
+# WLAN adapter (default "wlanO", empty if you don't want / need to get
+#   signal strength).
+WLAN_ADAPTER = "wlan0"
