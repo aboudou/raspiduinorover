@@ -395,7 +395,11 @@
             [self.pvSignal setProgressTintColor:[UIColor redColor]];
         }
         
-        [self.pvSignal setProgress:fSignal animated:YES];
+        if ([self.pvSignal progress] == 0.0f) {
+            [self.pvSignal setProgress:fSignal animated:NO];
+        } else {
+            [self.pvSignal setProgress:fSignal animated:YES];
+        }
     }
 
 }
