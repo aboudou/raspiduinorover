@@ -116,4 +116,13 @@ Some photos of the assembly
   <img src="/Images/remote_interface.png" title="iOS remote" alt="iOS remote" />
   <br/>
   <em>iOS remote, with motor current usage</em>
+  
+  <img src="/Images/battery_case.jpg" title="Optional 3D printed battery case" alt="Optional 3D printed battery case" />
+  <br/>
+  <em>Optional 3D printed battery case</em>
+
+  <img src="/Images/battery_power_board.jpg" title="Optional battery power board" alt="Optional battery power board" />
+  <br/>
+  <em>Optional battery power board</em>
+  
 </p>
