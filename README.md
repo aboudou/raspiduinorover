@@ -123,6 +123,6 @@ Some photos of the assembly
 
   <img src="/Images/battery_power_board.jpg" title="Optional battery power board" alt="Optional battery power board" />
   <br/>
-  <em>Optional battery power board</em>
+  <em>Optional battery power board, used to provide +5V to common power rail and +8V to motor shield</em>
   
 </p>
