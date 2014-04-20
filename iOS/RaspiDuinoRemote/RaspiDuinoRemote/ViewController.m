@@ -25,7 +25,7 @@
     
     self.btnLight.layer.borderWidth=1.0f;
     self.btnLight.layer.cornerRadius=5;
-    self.btnLight.layer.borderColor=[[UIColor blackColor] CGColor];
+    self.btnLight.layer.borderColor=[[[UIColor alloc] initWithRed:(15.0f/255.0f) green:(124.0f/255.0f) blue:(241.0f/255.0f) alpha:1.0f] CGColor];
 
     self.streamView.layer.borderWidth=1.0f;
     self.streamView.layer.cornerRadius=5;
@@ -108,7 +108,7 @@
 
 
 - (IBAction)stop:(id)sender {
-    [sender setAlpha:0.5f];
+    //[sender setAlpha:0.5f];
     [self sendCommand:@"stop"];
 }
 
@@ -153,13 +153,13 @@
 
 
 - (IBAction)servoCenter:(id)sender {
-    [sender setAlpha:0.5f];
+    //[sender setAlpha:0.5f];
     [self sendCommand:@"servoCenter"];
 }
 
 
 - (IBAction)servoStop:(id)sender {
-    [sender setAlpha:0.5f];
+    //[sender setAlpha:0.5f];
     [_tiltServoTimer invalidate];
     [_panServoTimer invalidate];
 }
@@ -184,7 +184,7 @@
 
 
 - (IBAction)darkenButton:(id)sender {
-    [sender setAlpha:1.0f];
+    //[sender setAlpha:1.0f];
 }
 
 
