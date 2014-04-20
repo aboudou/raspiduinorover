@@ -39,11 +39,11 @@ Active mode is when someone is connected to the rover:
 
 Results:
 
-idle mode  : 180 mA
+idle mode  : 460 mA
 
-active mode: 310 mA streaming (user just connected, no action)
-             330 mA streaming + lights on
-             340 mA streaming + servo moving
-             360 mA streaming + servo moving + lights on
-             450 mA streaming + motors running
-             470 mA streaming + motors running + lights on
+active mode: 730 mA streaming (user just connected, no action)
+             750 mA streaming + lights on
+             750 mA streaming + servo moving
+             800 mA streaming + servo moving + lights on
+             1750 mA streaming + motors running
+             1800 mA streaming + motors running + lights on
