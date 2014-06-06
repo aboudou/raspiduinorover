@@ -11,12 +11,12 @@ case "$1" in
     # Start raspimjpeg which will capture frames from camera module
     #   and save them to the ramdisk with the following settings:
     # - 640x360 picture size (16/9 ratio)
-    # - 15% JPEG quality
-    # - save 1 frame every 5 frames (equals 30/5 = 6fps)
-    # These settings give a 1500 kbs stream
+    # - 10% JPEG quality
+    # - No frame drop (equals 30 fps)
+    # These settings give a 1600 kbs stream
     #
     # About raspimjpeg: http://www.raspberrypi.org/forums/viewtopic.php?t=61771
-    "${DIR}"/raspimjpeg -w 640 -h 360 -d 5 -q 15 -of /ramcache/pic.jpg &
+    "${DIR}"/raspimjpeg -w 640 -h 360 -d 1 -q 10 -of /ramcache/pic.jpg &
 
     # Start mjpeg_streamer
     #
