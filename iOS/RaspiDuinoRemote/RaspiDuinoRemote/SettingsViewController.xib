@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B3116" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController">
@@ -20,21 +20,18 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RaspiDuinoRover Host" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ejT-V7-vsb">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RaspiDuinoRover Host" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ejT-V7-vsb">
                     <rect key="frame" x="20" y="33" width="280" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RaspiDuinoRover Port" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="43A-hf-SIS">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RaspiDuinoRover Port" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="43A-hf-SIS">
                     <rect key="frame" x="20" y="71" width="280" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqu-9l-o67">
                     <rect key="frame" x="20" y="430" width="34" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Save">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -44,7 +41,6 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ay-gD-gMu">
                     <rect key="frame" x="252" y="430" width="48" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Cancel">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -52,9 +48,8 @@
                         <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="Cop-HV-5bq"/>
                     </connections>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MJPEG Stream URL" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="WiX-3e-McN">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MJPEG Stream URL" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="WiX-3e-McN">
                     <rect key="frame" x="20" y="109" width="280" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL"/>
                 </textField>
@@ -63,11 +58,24 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="pqu-9l-o67" secondAttribute="bottom" constant="20" id="8CH-TC-TUb"/>
                 <constraint firstAttribute="bottom" secondItem="2ay-gD-gMu" secondAttribute="bottom" constant="20" id="9L1-VU-jdp"/>
+                <constraint firstItem="WiX-3e-McN" firstAttribute="top" secondItem="43A-hf-SIS" secondAttribute="bottom" constant="8" id="Ae8-qQ-d3P"/>
                 <constraint firstItem="pqu-9l-o67" firstAttribute="leading" secondItem="TtD-we-qTM" secondAttribute="leading" constant="20" id="V11-gH-Q0E"/>
+                <constraint firstAttribute="trailing" secondItem="43A-hf-SIS" secondAttribute="trailing" constant="20" id="eoI-FL-fWX"/>
+                <constraint firstItem="ejT-V7-vsb" firstAttribute="top" secondItem="TtD-we-qTM" secondAttribute="top" constant="33" id="ihw-LG-Z9e"/>
+                <constraint firstItem="WiX-3e-McN" firstAttribute="leading" secondItem="TtD-we-qTM" secondAttribute="leading" constant="20" id="jHx-QG-nrH"/>
+                <constraint firstItem="43A-hf-SIS" firstAttribute="top" secondItem="ejT-V7-vsb" secondAttribute="bottom" constant="8" id="kEP-cI-P2f"/>
+                <constraint firstAttribute="trailing" secondItem="ejT-V7-vsb" secondAttribute="trailing" constant="20" id="klQ-pU-y4H"/>
                 <constraint firstAttribute="trailing" secondItem="2ay-gD-gMu" secondAttribute="trailing" constant="20" id="my7-f9-3Kb"/>
+                <constraint firstAttribute="trailing" secondItem="WiX-3e-McN" secondAttribute="trailing" constant="20" id="ogh-wI-rPF"/>
+                <constraint firstItem="43A-hf-SIS" firstAttribute="leading" secondItem="TtD-we-qTM" secondAttribute="leading" constant="20" id="qST-dw-4eW"/>
+                <constraint firstItem="ejT-V7-vsb" firstAttribute="leading" secondItem="TtD-we-qTM" secondAttribute="leading" constant="20" id="wHV-Fv-Cbe"/>
             </constraints>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
