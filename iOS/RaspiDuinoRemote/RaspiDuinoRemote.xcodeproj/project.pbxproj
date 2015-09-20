@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B4608931BAF391100607BE0 /* video@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B4608921BAF391100607BE0 /* video@3x.png */; settings = {ASSET_TAGS = (); }; };
 		3B6A7D581880809600433CFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6A7D571880809600433CFF /* Foundation.framework */; };
 		3B6A7D5A1880809600433CFF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6A7D591880809600433CFF /* CoreGraphics.framework */; };
 		3B6A7D5C1880809600433CFF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6A7D5B1880809600433CFF /* UIKit.framework */; };
@@ -39,7 +40,6 @@
 		3B793C741AF3A0EF005E7C2A /* lightoff@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B793C721AF3A0EF005E7C2A /* lightoff@3x.png */; };
 		3B793C751AF3A0EF005E7C2A /* lighton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B793C731AF3A0EF005E7C2A /* lighton@3x.png */; };
 		3B793C771AF3A94F005E7C2A /* move_center@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B793C761AF3A94F005E7C2A /* move_center@3x.png */; };
-		3B793C791AF3AB8B005E7C2A /* video@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B793C781AF3AB8B005E7C2A /* video@3x.png */; };
 		3B8A6FB218A781AC00F4B585 /* MotionJpegImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A6FB118A781AC00F4B585 /* MotionJpegImageView.m */; };
 		3B9F14FF188191D700B9C097 /* move_center@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9F14F9188191D700B9C097 /* move_center@2x.png */; };
 /* End PBXBuildFile section */
@@ -55,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B4608921BAF391100607BE0 /* video@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "video@3x.png"; path = "../../../../../../developpement raspberry pi/projets/raspiduinorover/iOS/RaspiDuinoRemote/RaspiDuinoRemote/video@3x.png"; sourceTree = "<group>"; };
 		3B6A7D541880809600433CFF /* RaspiDuinoRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaspiDuinoRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B6A7D571880809600433CFF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3B6A7D591880809600433CFF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -93,7 +94,6 @@
 		3B793C721AF3A0EF005E7C2A /* lightoff@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lightoff@3x.png"; path = "../../../../../projets/raspiduinorover/iOS/RaspiDuinoRemote/RaspiDuinoRemote/lightoff@3x.png"; sourceTree = "<group>"; };
 		3B793C731AF3A0EF005E7C2A /* lighton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lighton@3x.png"; path = "../../../../../projets/raspiduinorover/iOS/RaspiDuinoRemote/RaspiDuinoRemote/lighton@3x.png"; sourceTree = "<group>"; };
 		3B793C761AF3A94F005E7C2A /* move_center@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "move_center@3x.png"; path = "../../../../../projets/raspiduinorover/iOS/RaspiDuinoRemote/RaspiDuinoRemote/move_center@3x.png"; sourceTree = "<group>"; };
-		3B793C781AF3AB8B005E7C2A /* video@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "video@3x.png"; path = "../../../../../../../../Desktop/video@3x.png"; sourceTree = "<group>"; };
 		3B8A6FB018A781AC00F4B585 /* MotionJpegImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MotionJpegImageView.h; path = External/MotionJpegImageView/MotionJpegImageView.h; sourceTree = SOURCE_ROOT; };
 		3B8A6FB118A781AC00F4B585 /* MotionJpegImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MotionJpegImageView.m; path = External/MotionJpegImageView/MotionJpegImageView.m; sourceTree = SOURCE_ROOT; };
 		3B9F14F9188191D700B9C097 /* move_center@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "move_center@2x.png"; sourceTree = "<group>"; };
@@ -239,7 +239,7 @@
 				3B6A7D9B188089B100433CFF /* lighton@2x.png */,
 				3B793C731AF3A0EF005E7C2A /* lighton@3x.png */,
 				3B6A7D8F1880811600433CFF /* video@2x.png */,
-				3B793C781AF3AB8B005E7C2A /* video@3x.png */,
+				3B4608921BAF391100607BE0 /* video@3x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -323,7 +323,7 @@
 				3B793C741AF3A0EF005E7C2A /* lightoff@3x.png in Resources */,
 				3B793C751AF3A0EF005E7C2A /* lighton@3x.png in Resources */,
 				3B6A7D701880809600433CFF /* Images.xcassets in Resources */,
-				3B793C791AF3AB8B005E7C2A /* video@3x.png in Resources */,
+				3B4608931BAF391100607BE0 /* video@3x.png in Resources */,
 				3B9F14FF188191D700B9C097 /* move_center@2x.png in Resources */,
 				3B6A7D621880809600433CFF /* InfoPlist.strings in Resources */,
 				3B793C6F1AF38FE6005E7C2A /* move_right@3x.png in Resources */,
