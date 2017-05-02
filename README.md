@@ -78,12 +78,15 @@ __Important:__ Don't forget to cut “Vin” jumper on the backside of the shiel
 Then you have to install UV4L, following [these steps](https://www.linux-projects.org/uv4l/installation/). You'll need to install the following packages: “uv4l”, “uv4l-raspicam”, “uv4l-raspicam-extras” and “uv4l-server”.
 
 You may want to use the following settings in “/etc/uv4l/uv4l-raspicam.conf” file (adapt to fit your needs):
- width = 640
- height = 360
- framerate = 30
- quality = 10
- server-option = --port=8080
- server-option = --use-ssl=no
+
+```
+width = 640
+height = 360
+framerate = 30
+quality = 10
+server-option = --port=8080
+server-option = --use-ssl=no
+```
 
 then restart “uv4l_raspicam” service with “service uv4l_raspicam restart”.
 
