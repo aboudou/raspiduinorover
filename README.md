@@ -39,8 +39,7 @@ Requirements
 	* Python (with Debian / Raspbian : packages “python”, “python-dev”).
 	* SMBus library . On Raspbian, install package “python-smbus”.
 	* Twisted library. On Raspbian, install package “python-twisted”.
-	* MJPEG Streamer (but not the version from raspbian packages, see below)
-	* (optionnal) a fresher version of raspimjpeg, see below
+	* UV4L (see below)
 * For iPhone part :
 	* An iPhone (or iPad, or iPod Touch) with iOS 7
 	* XCode 5.0.x
@@ -76,9 +75,17 @@ You'll first have to upload “Arduino/Arduino.uno” sketch to your Ardunio Uno
 
 __Important:__ Don't forget to cut “Vin” jumper on the backside of the shield.
 
-Then you have to install MJPEG Streamer, following [these steps (steps 1 to 6)](http://blog.miguelgrinberg.com/post/how-to-build-and-run-mjpg-streamer-on-the-raspberry-pi).
+Then you have to install UV4L, following [these steps](https://www.linux-projects.org/uv4l/installation/). You'll need to install the following packages: “uv4l”, “uv4l-raspicam”, “uv4l-raspicam-extras” and “uv4l-server”.
 
-You may want to install a fresher version of [raspimjpeg](http://www.raspberrypi.org/forums/viewtopic.php?t=61771) even if a working binary is provided (into ”./RaspberryPi/bin/” folder).
+You may want to use the following settings in “/etc/uv4l/uv4l-raspicam.conf” file (adapt to fit your needs):
+ width = 640
+ height = 360
+ framerate = 30
+ quality = 10
+ server-option = --port=8080
+ server-option = --use-ssl=no
+
+then restart “uv4l_raspicam” service with “service uv4l_raspicam restart”.
 
 Then update “./RaspberryPi/config.py” file to fit your needs.
 
@@ -94,7 +101,7 @@ How to use RaspiDuinoRemote (iPhone)
 
 Just open XCode project then build and install RaspiDuinoRemote on your iDevice. If you don't have an Apple iOS Developper account, you may use RaspiDuinoRemote within iOS Simulator.
 
-When application is started, enter hostname (or IP adress) of your Raspberry Pi, the server port (default value is 8000, unless changed into “config.py” file) and MJPEG stream URL (if you use MJPEG Streamer, it should be “http://&lt;raspberrypi_ip&gt;:8080/?action=stream”. Then tap “Connect” button.
+When application is started, enter hostname (or IP adress) of your Raspberry Pi, the server port (default value is 8000, unless changed into “config.py” file) and MJPEG stream URL (it should be “http://&lt;raspberrypi_ip&gt;:8080/stream/video.mjpeg”. Then tap “Connect” button.
 
 
 Some photos of the assembly
